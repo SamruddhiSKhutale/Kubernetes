@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: custom-namespace
+  labels:
+    environment: production
+    team: platform
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+  namespace: custom-namespace
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
